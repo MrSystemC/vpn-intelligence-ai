@@ -4,7 +4,7 @@ databases:
     user: vpn_intelligence
     plan: free
     region: ohio
-    postgresMajorVersion: 18
+    postgresMajorVersion: "18"
 
 services:
   - type: web
