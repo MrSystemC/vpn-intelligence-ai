@@ -54,9 +54,9 @@ Send `X-API-Key: <tenant-key>`:
 
 The tenant ID is resolved from the authenticated key. Clients cannot choose another tenant's ID in requests.
 
-## Render
+## Zero-upfront-cost demo deployment
 
-The Blueprint provisions a web service and a PostgreSQL database in Ohio. The current file selects Render's free plans for initial evaluation; free-tier availability, persistence, and limits are subject to Render's current terms. Review the plan and expected limitations in the Render Dashboard before applying. No Render resource has been created by this repository change.
+The Render Blueprint creates **only one Free web service**. It does not provision paid compute, a Render database, disks, or workers. The `DATABASE_URL` value must point to an external PostgreSQL database; use a free Neon PostgreSQL project for the demo and paste its pooled connection string into the Render service environment. Neon currently documents a $0 Free plan with 1 GB storage and 100 compute-hours per project/month. Free Render web services sleep after 15 minutes without traffic and have ephemeral filesystems; this is suitable for a demo, not production. Render documents that free Postgres expires after 30 days, so this Blueprint deliberately does not create one. Keep within free-tier quotas and do not enable paid upgrades or add-ons. Check provider billing controls before deployment; no provider can guarantee zero cost if you later opt into paid usage or exceed billable allowances.
 
 ## Remaining production gates
 
